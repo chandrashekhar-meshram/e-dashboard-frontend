@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Nav from './Nav';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/profile" element={<h1>Profile Component</h1>} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }
