@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-.nav-ul li{
+/* Hearder */
+.nav-ul li {
   display: inline-block;
   padding: 10px;
 }
@@ -21,15 +22,33 @@
   padding: 5px;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  background-color: skyblue;
-  width: 100%;
-  text-align: center;
+/* SignUp Form */
+.register {
+  margin-left: 30%;
+}
+
+.inputBox {
+  padding: 7px;
+  display: block;
+  border: 1px solid skyblue;
+  width: 300px;
+  margin: 20px;
+}
+
+.appButton {
+  margin: 20px;
+  width: 150px;
+  padding: 10px;
+  background-color: skyblue ;
+  border: solid 1px;
+  cursor: pointer;
 }
 
 /* 
+
+
+*/
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -37,5 +56,3 @@
   width: 100%;
   text-align: center;
 }
-
-*/
