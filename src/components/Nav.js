@@ -34,9 +34,9 @@ const Nav = () => {
             auth ? 
             <Link onClick={Logout} to='/signup'>Logout</Link> :  
             <Link to='/signup'>SignUp</Link>
-          }
-         
+          }         
         </li>
+        <li><Link to='/login'>Login</Link></li>
       </ul>
     </div>
   );
