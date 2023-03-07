@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const [name, setName] = useState('');
@@ -22,8 +22,10 @@ const SignUp = () => {
     );
     result = await result.json();
     console.log(result);
-    if(result){
-      navigate('/')
+    localStorage.setItem('user', JSON.stringify(result));
+    
+    if (result) {
+      navigate('/');
     }
   };
 
