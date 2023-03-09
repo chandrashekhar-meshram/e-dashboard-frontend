@@ -22,6 +22,15 @@
   padding: 5px;
 }
 
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  float: left;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
 /* SignUp Form */
 .register {
   margin-left: 30%;
