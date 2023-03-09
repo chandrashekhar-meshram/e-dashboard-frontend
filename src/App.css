@@ -31,9 +31,18 @@
   margin-left: 10px;
 }
 
+.nav-right {
+  text-align: right;
+}
+
 /* SignUp Form */
 .register {
   margin-left: 30%;
+}
+
+.login {
+  margin-left: 30%;
+  margin-top: 100px;
 }
 
 .inputBox {
@@ -52,11 +61,6 @@
   border: solid 1px;
   cursor: pointer;
 }
-
-/* 
-
-
-*/
 
 .footer {
   position: absolute;
