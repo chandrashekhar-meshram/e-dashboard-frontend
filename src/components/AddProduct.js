@@ -24,6 +24,11 @@ const AddProduct = ()=> {
     });
     result = await result.json();
     console.log(result);
+    setName('');
+    setPrice('');
+    setCategory('');
+    setCompany("");
+    setError("");
   }
 
   return(

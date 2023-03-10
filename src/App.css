@@ -76,11 +76,16 @@
   margin-top: 50px;
 }
 
+.list-header li{
+  text-align: center !important;
+}
+
 .product-list ul li {
+  text-align: left;
   display: inline-block;
   border: 1px solid skyblue;
   padding: 5px;
-  width: 150px;
+  min-width: 150px;
 }
 
 .footer {
