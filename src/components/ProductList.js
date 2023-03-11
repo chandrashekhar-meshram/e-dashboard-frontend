@@ -10,8 +10,11 @@ const ProductList = () => {
 
   const getProducts = async () => {
     let result = await fetch(
-      'https://React-and-node-js-project-MERN-stack.chandrashekha42.repl.co/products'
-    );
+      'https://React-and-node-js-project-MERN-stack.chandrashekha42.repl.co/products', {
+        headers: {
+          authorization: JSON.parse(localStorage.getItem('token'))
+        }
+      });
     result = await result.json();
     setProducts(result);
   };
