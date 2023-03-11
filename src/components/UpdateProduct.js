@@ -15,16 +15,24 @@ const UpdateProduct = ()=> {
 
   useEffect(()=> {
     console.log(params);
-
+    getProductDetails();
   }, []);
 
-  
+  const getProductDetails = async ()=> {
+    let result = await fetch(`https://React-and-node-js-project-MERN-stack.chandrashekha42.repl.co/product/${params.id}`);
+    result = await result.json();
+    setName(result.name);   
+    setPrice(result.price);
+    setCategory(result.category);
+    setCompany(result.company);
+  }
+
   /*
- 
+
   */
 
   return(
-    <div>
+    <div className = 'product'>
       <h1>UpdateProduct</h1>
       <input
         type = 'text'
