@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useParams} from 'react-router-dom';
 
 const UpdateProduct = ()=> {
   const [name, setName] = useState('');
@@ -6,9 +7,21 @@ const UpdateProduct = ()=> {
   const [category, setCategory] = useState('');
   const [company, setCompany] = useState('');
 
+  const params = useParams();
+
   const updateProduct = ()=> {
     console.log(name, price, category, company);
   }
+
+  useEffect(()=> {
+    console.log(params);
+
+  }, []);
+
+  
+  /*
+ 
+  */
 
   return(
     <div>
