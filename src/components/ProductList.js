@@ -28,11 +28,30 @@ const ProductList = () => {
       alert('Record deleted');
       getProducts();
     }
+  };
+
+  const searchHandle = async (e)=> {
+    console.log(e.target.value)
+    let key = e.target.value;
+    let result = await fetch(`https://React-and-node-js-project-MERN-stack.chandrashekha42.repl.co/search/${key}`);
+    result = await result.json();
+    if(result){
+      setProducts(result);
+    }
+
   }
 
   return (
     <div className="product-list">
       <h1>Product List</h1>
+
+      <input 
+        type = 'text'
+        className = 'search-product-box'
+        placeholder = 'Search Product'
+        onChange = {searchHandle}
+      />
+
       <ul className = 'list-header'>
         <li>S. No</li>
         <li>Name</li>
