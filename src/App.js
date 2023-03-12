@@ -17,7 +17,6 @@ export default function App() {
         <Nav />
 
         <Routes>
-
           <Route element={<PrivateComponent />}>
               <Route path="/" element={<ProductList />} />
               <Route path="/add" element={<AddProduct />} />
@@ -25,9 +24,9 @@ export default function App() {
               <Route path="/logout" element={<h1>Logout Component</h1>} />
               <Route path="/profile" element={<h1>Profile Component</h1>} />
           </Route>
-
-          <Route path='/signup' element={<SignUp />} />
+          
           <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<SignUp />} />          
         </Routes>
       </BrowserRouter>
       <Footer />
