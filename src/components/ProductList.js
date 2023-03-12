@@ -10,11 +10,13 @@ const ProductList = () => {
 
   const getProducts = async () => {
     let result = await fetch(
-      'https://React-and-node-js-project-MERN-stack.chandrashekha42.repl.co/products', {
+      'https://React-and-node-js-project-MERN-stack.chandrashekha42.repl.co/products',
+      {
         headers: {
-          authorization: JSON.parse(localStorage.getItem('token'))
-        }
-      });
+          authorization: JSON.parse(localStorage.getItem('token')),
+        },
+      }
+    );
     result = await result.json();
     setProducts(result);
   };
@@ -46,7 +48,7 @@ const ProductList = () => {
       if (result) {
         setProducts(result);
       }
-    }else{
+    } else {
       getProducts();
     }
   };
@@ -71,23 +73,41 @@ const ProductList = () => {
         <li>Operation</li>
       </ul>
 
-      {
-         products.length > 0 ?  products.map((item, index) => 
+      {/* {
+         products.length > 0 ?  products.map((item, index) => {
           <ul key={index}>
+          <li>{index + 1}</li>
+          <li>{item.name}</li>
+          <li>₹ {item.price}</li>
+          <li>{item.category}</li>
+          <li>{item.company}</li>
+          <li>
+            <button type="button" onClick={() => deleteProduct(item._id)}>
+              Delete
+            </button>
+            <Link to={'/update/' + item._id}>Update</Link>
+          </li>
+        </ul>
+         }
+        ) : <h2>No result found</h2>
+      } */}
+
+      {products.length > 0 ? (
+        products.map((item, index) => (
+          <ul key={item._id}>
             <li>{index + 1}</li>
             <li>{item.name}</li>
-            <li>₹ {item.price}</li>
+            <li>{item.price}</li>
             <li>{item.category}</li>
-            <li>{item.company}</li>
             <li>
-              <button type="button" onClick={() => deleteProduct(item._id)}>
-                Delete
-              </button>
-              <Link to={'/update/' + item._id}>Update</Link>
+              <button onClick={() => deleteProduct(item._id)}>Delete</button>
+              <Link to={'/update/' + item._id}>Update </Link>
             </li>
           </ul>
-        ) : <h2>No result found</h2>
-      }
+        ))
+      ) : (
+        <h1>No Result Found</h1>
+      )}
     </div>
   );
 };

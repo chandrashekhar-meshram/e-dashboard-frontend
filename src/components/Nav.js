@@ -40,9 +40,9 @@ const Nav = () => {
               <Link onClick={Logout} to='/signup'>Logout ({JSON.parse(auth).name}) </Link>
             </li>
         </ul> :
-         <ul className = 'nav-ul nav-right'>         
-            <li><Link to='/signup'>SignUp</Link></li>
-            <li><Link to='/login'>Login</Link></li>
+         <ul className = 'nav-ul nav-right'>      
+            <li><Link to='/login'>Login</Link></li>   
+            <li><Link to='/signup'>SignUp</Link></li>            
          </ul>
       }      
     </div>
