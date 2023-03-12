@@ -13,7 +13,7 @@ const ProductList = () => {
       'https://React-and-node-js-project-MERN-stack.chandrashekha42.repl.co/products',
       {
         headers: {
-          authorization: JSON.parse(localStorage.getItem('token')),
+          authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}` ,
         },
       }
     );
@@ -73,8 +73,8 @@ const ProductList = () => {
         <li>Operation</li>
       </ul>
 
-      {/* {
-         products.length > 0 ?  products.map((item, index) => {
+      {
+         products.length > 0 ?  products.map((item, index) => (
           <ul key={index}>
           <li>{index + 1}</li>
           <li>{item.name}</li>
@@ -88,11 +88,11 @@ const ProductList = () => {
             <Link to={'/update/' + item._id}>Update</Link>
           </li>
         </ul>
-         }
+         )
         ) : <h2>No result found</h2>
-      } */}
+      }
 
-      {products.length > 0 ? (
+      {/* {products.length > 0 ? (
         products.map((item, index) => (
           <ul key={item._id}>
             <li>{index + 1}</li>
@@ -107,7 +107,7 @@ const ProductList = () => {
         ))
       ) : (
         <h1>No Result Found</h1>
-      )}
+      )} */}
     </div>
   );
 };
