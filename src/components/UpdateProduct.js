@@ -16,7 +16,11 @@ const UpdateProduct = ()=> {
   }, []);
 
   const getProductDetails = async ()=> {
-    let result = await fetch(`https://React-and-node-js-project-MERN-stack.chandrashekha42.repl.co/product/${params.id}`);
+    let result = await fetch(`https://React-and-node-js-project-MERN-stack.chandrashekha42.repl.co/product/${params.id}`, {
+      headers: {
+        authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}` ,
+      },
+    });
     result = await result.json();
     setName(result.name);   
     setPrice(result.price);
@@ -30,10 +34,12 @@ const UpdateProduct = ()=> {
       method: 'Put',
       body: JSON.stringify({name, price, category, company}),
       headers: {
-        'Content-Type' : 'Application/json'
+        'Content-Type' : 'Application/json',
+        authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}` ,
       }
     });
     result = await result.json();
+    alert('Product updated');
     console.log(result);
     
     navigate('/');

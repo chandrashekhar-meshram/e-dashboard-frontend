@@ -31,9 +31,6 @@ const Nav = () => {
               <Link to="/update">Update Product</Link>
             </li>
             <li>
-              
-            </li>
-            <li>
               <Link to='/profile'>Profile</Link>
             </li>
             <li>

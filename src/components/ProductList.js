@@ -28,6 +28,9 @@ const ProductList = () => {
       `https://React-and-node-js-project-MERN-stack.chandrashekha42.repl.co/product/${id}`,
       {
         method: 'delete',
+        headers: {
+          authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}` ,
+        },
       }
     );
     result = await result.json();
@@ -42,7 +45,11 @@ const ProductList = () => {
     let key = e.target.value;
     if (key) {
       let result = await fetch(
-        `https://React-and-node-js-project-MERN-stack.chandrashekha42.repl.co/search/${key}`
+        `https://React-and-node-js-project-MERN-stack.chandrashekha42.repl.co/search/${key}`,  {
+          headers: {
+            authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}` ,
+          },
+        }
       );
       result = await result.json();
       if (result) {
