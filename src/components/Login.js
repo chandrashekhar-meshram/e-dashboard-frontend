@@ -24,7 +24,7 @@ const Login = ()=> {
       }
     });
     result = await result.json();
-    console.log(result);
+    console.log("result - ", result);
     // if(result.name){
       if(result.auth){
       localStorage.setItem('user', JSON.stringify(result.user));
